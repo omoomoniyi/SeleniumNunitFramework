@@ -1,0 +1,56 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+	  <GenerateRuntimeConfigDevFile>true</GenerateRuntimeConfigDevFile>
+	  <OutputType>Exe</OutputType>
+	  <ImplicitUsings>disable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ExtentReports" Version="4.1.0" />
+    <PackageReference Include="NUnit" Version="3.13.3" />
+    <PackageReference Include="NUnit3TestAdapter" Version="4.2.1" />
+    <PackageReference Include="NUnit.Analyzers" Version="3.3.0" />
+    <PackageReference Include="coverlet.collector" Version="3.1.2" />
+	<PackageReference Include="Selenium.Support" Version="4.3.0" />
+	<PackageReference Include="Selenium.WebDriver" Version="4.3.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.6.1" />
+    <PackageReference Include="SeleniumExtras.WaitHelpers" Version="1.0.2" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="5.0.0" />
+    <PackageReference Include="WebDriverManager" Version="2.17.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+
+	  <None Update="App2.config">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
+	  <None Update="TestData\TestData.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
+    
+	
+  <!--</ItemGroup>
+	<Target Name="CopyCustoContent" AfterTargets="AfterBuild">
+		<Copy SourceFiles="App.config" DestinationFiles="$(OutDir)\SeleniumNunitFramework.dll.config" />
+	</Target>
+	<ProjectExtensions><VisualStudio><UserProperties testdata_4testdata_1json__JsonSchema="https://codemagic.io/codemagic-schema.json" /></VisualStudio></ProjectExtensions>-->
+
+
+	</ItemGroup>
+	<Target Name="CopyCustoContent" AfterTargets="AfterBuild">
+		<Copy SourceFiles="App.config" DestinationFiles="$(OutDir)\SeleniumNunitFramework.dll.config" />
+		<Copy SourceFiles="App.config" DestinationFiles="$(OutDir)\testhost.dll.config" />
+	</Target>
+	<ProjectExtensions>
+		<VisualStudio>
+			<UserProperties testdata_4testdata_1json__JsonSchema="https://codemagic.io/codemagic-schema.json" />
+		</VisualStudio>
+	</ProjectExtensions>
+
+
+</Project>
