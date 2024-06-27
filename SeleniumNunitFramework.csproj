@@ -24,24 +24,16 @@
     <PackageReference Include="WebDriverManager" Version="2.17.1" />
   </ItemGroup>
 
-  <ItemGroup>
-
-	  <None Update="App2.config">
-		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	  </None>
-	  <None Update="TestData\TestData.json">
-		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	  </None>
-    
-	
-  <!--</ItemGroup>
+<ItemGroup>
 	<Target Name="CopyCustoContent" AfterTargets="AfterBuild">
 		<Copy SourceFiles="App.config" DestinationFiles="$(OutDir)\SeleniumNunitFramework.dll.config" />
+		<Copy SourceFiles="App.config" DestinationFiles="$(OutDir)\testhost.dll.config" />
 	</Target>
-	<ProjectExtensions><VisualStudio><UserProperties testdata_4testdata_1json__JsonSchema="https://codemagic.io/codemagic-schema.json" /></VisualStudio></ProjectExtensions>-->
+	<ProjectExtensions><VisualStudio><UserProperties testdata_4testdata_1json__JsonSchema="https://codemagic.io/codemagic-schema.json" /></VisualStudio></ProjectExtensions>
 
 
 	</ItemGroup>
+
 	<Target Name="CopyCustoContent" AfterTargets="AfterBuild">
 		<Copy SourceFiles="App.config" DestinationFiles="$(OutDir)\SeleniumNunitFramework.dll.config" />
 		<Copy SourceFiles="App.config" DestinationFiles="$(OutDir)\testhost.dll.config" />
