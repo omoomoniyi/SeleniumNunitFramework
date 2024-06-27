@@ -34,6 +34,18 @@
 
 	</ItemGroup>
 
+  <ItemGroup>
+
+	  <None Update="App2.config">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
+	  <None Update="TestData\TestData.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
+    
+	
+  </ItemGroup>
+
 	<Target Name="CopyCustoContent" AfterTargets="AfterBuild">
 		<Copy SourceFiles="App.config" DestinationFiles="$(OutDir)\SeleniumNunitFramework.dll.config" />
 		<Copy SourceFiles="App.config" DestinationFiles="$(OutDir)\testhost.dll.config" />
