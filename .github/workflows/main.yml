@@ -22,10 +22,10 @@ jobs:
         dotnet-version: '6.0.x' # Ensure the correct .NET version is installed
 
     - name: Restore dependencies
-      run: dotnet restore ./path/to/your/Mplify-Automation.sln # Specify the correct relative path to your solution file
+      run: dotnet restore Mplify-Automation.sln # Specify the correct relative path to your solution file
 
     - name: Build
-      run: dotnet build ./path/to/your/Mplify-Automation.sln --configuration Release # Specify the correct relative path to your solution file
+      run: dotnet build Mplify-Automation.sln --configuration Release # Specify the correct relative path to your solution file
 
     - name: Install Selenium WebDriver
       run: |
@@ -33,4 +33,4 @@ jobs:
         sudo apt-get install -y chromium-browser chromium-chromedriver
 
     - name: Run tests
-      run: dotnet test ./path/to/your/Mplify-Automation.sln --configuration Release # Specify the correct relative path to your solution file
+      run: dotnet test Mplify-Automation.sln --configuration Release # Specify the correct relative path to your solution file
